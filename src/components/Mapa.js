@@ -2,36 +2,36 @@ import React, { useEffect } from 'react';
 
 function Mapa() {
   useEffect(() => {
-    const carregarDenunciasDoJSON = (map) => {
-      fetch('assets/json/denuncia.json')
-        .then((response) => response.json())
-        .then((data) => {
-          adicionarMarcadoresNoMapa(map, data.denuncia);
-        })
-        .catch((error) => {
-          console.error('Erro ao carregar o arquivo JSON:', error);
-        });
-    };
+    // const carregarDenunciasDoJSON = (map) => {
+    //   fetch('assets/json/denuncia.json')
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //       adicionarMarcadoresNoMapa(map, data.denuncia);
+    //     })
+    //     .catch((error) => {
+    //       console.error('Erro ao carregar o arquivo JSON:', error);
+    //     });
+    // };
 
-    const adicionarMarcadoresNoMapa = (map, denuncias) => {
-      denuncias.forEach((denuncia) => {
-        const latitude = parseFloat(denuncia.latitude);
-        const longitude = parseFloat(denuncia.longitude);
-        const textoDenuncia = denuncia.textoDenuncia;
+    // const adicionarMarcadoresNoMapa = (map, denuncias) => {
+    //   denuncias.forEach((denuncia) => {
+    //     const latitude = parseFloat(denuncia.latitude);
+    //     const longitude = parseFloat(denuncia.longitude);
+    //     const textoDenuncia = denuncia.textoDenuncia;
 
-        const customIcon = {
-          url: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-          scaledSize: new window.google.maps.Size(30, 30),
-        };
+    //     const customIcon = {
+    //       url: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+    //       scaledSize: new window.google.maps.Size(30, 30),
+    //     };
 
-        const marker = new window.google.maps.Marker({
-          position: { lat: latitude, lng: longitude },
-          map: map,
-          title: textoDenuncia,
-          icon: customIcon,
-        });
-      });
-    };
+    //     // const marker = new window.google.maps.Marker({
+    //     //   position: { lat: latitude, lng: longitude },
+    //     //   map: map,
+    //     //   title: textoDenuncia,
+    //     //   icon: customIcon,
+    //     // });
+    //   });
+    // };
 
     const handleLocationError = (error) => {
       switch (error.code) {
@@ -65,13 +65,13 @@ function Mapa() {
             mapOptions
           );
 
-          const userMarker = new window.google.maps.Marker({
-            position: { lat: latitude, lng: longitude },
-            map: map,
-            title: 'Sua Localização Atual',
-          });
+        //   const userMarker = new window.google.maps.Marker({
+        //     position: { lat: latitude, lng: longitude },
+        //     map: map,
+        //     title: 'Sua Localização Atual',
+        //   });
 
-          carregarDenunciasDoJSON(map);
+        //   carregarDenunciasDoJSON(map);
         },
         function (error) {
           handleLocationError(error);
