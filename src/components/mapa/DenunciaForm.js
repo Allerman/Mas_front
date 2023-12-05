@@ -7,7 +7,16 @@ const DenunciaForm = () => {
     const onSuccess = (position) => {
       const { latitude, longitude } = position.coords;
       console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-      // Faça algo com as coordenadas, como enviar para o servidor de denúncias
+
+      // Aqui você pode usar a biblioteca de mapas para renderizar o mapa.
+      // Certifique-se de configurar corretamente a biblioteca de mapas.
+
+      // Exemplo fictício com um elemento de mapa (substitua com sua lógica real):
+      const mapElement = document.createElement('div');
+      mapElement.style.width = '100%';
+      mapElement.style.height = '400px';
+      mapElement.innerHTML = `Mapa: ${latitude}, ${longitude}`;
+      document.body.appendChild(mapElement);
     };
 
     const onError = (error) => {
