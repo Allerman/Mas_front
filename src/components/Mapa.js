@@ -65,11 +65,11 @@ function Mapa() {
             mapOptions
           );
 
-          const userMarker = new window.google.maps.Marker({
-            position: { lat: latitude, lng: longitude },
-            map: map,
-            title: 'Sua Localização Atual',
-          });
+        //   const userMarker = new window.google.maps.Marker({
+        //     position: { lat: latitude, lng: longitude },
+        //     map: map,
+        //     title: 'Sua Localização Atual',
+        //   });
 
           carregarDenunciasDoJSON(map);
         },
