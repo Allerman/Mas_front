@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import SimpleBottomNavigation from './components/Botoes';
 import ResponsiveAppBar from './components/TopBar';

@@ -24,7 +24,7 @@ function Mapa() {
           scaledSize: new window.google.maps.Size(30, 30),
         };
 
-        new window.google.maps.Marker({
+        const marker = new window.google.maps.Marker({
           position: { lat: latitude, lng: longitude },
           map: map,
           title: textoDenuncia,
@@ -65,11 +65,11 @@ function Mapa() {
             mapOptions
           );
 
-        //   const userMarker = new window.google.maps.Marker({
-        //     position: { lat: latitude, lng: longitude },
-        //     map: map,
-        //     title: 'Sua Localização Atual',
-        //   });
+          const userMarker = new window.google.maps.Marker({
+            position: { lat: latitude, lng: longitude },
+            map: map,
+            title: 'Sua Localização Atual',
+          });
 
           carregarDenunciasDoJSON(map);
         },
@@ -80,6 +80,7 @@ function Mapa() {
     } else {
       alert('A geolocalização não é suportada neste navegador.');
     }
+
   }, []); // Executar apenas uma vez ao montar o componente
 
   return <div id="map" style={{ width: '100%', height: '100vh' }} />;
