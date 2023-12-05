@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+import ResponsiveAppBar from './components/TopBar';
+import { isGeolocationSupported } from './components/mapa/geolocationSupport';
+import DenunciaForm from './components/mapa/DenunciaForm';
 import './App.css';
 
-function App() {
+const App = () => {
+  if (!isGeolocationSupported()) {
+    console.log('Geolocalização não suportada');
+    // Lidar com a geolocalização não suportada
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ResponsiveAppBar/>
+      <DenunciaForm />
     </div>
   );
-}
-
+};
 export default App;
