@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
-import MapIcon from '@material-ui/icons/Map';
 import ReportIcon from '@material-ui/icons/Report';
 import PhoneIcon from '@material-ui/icons/Phone';
 
